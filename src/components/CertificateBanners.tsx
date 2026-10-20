@@ -4,16 +4,16 @@ import useModalScrollLock from '../hooks/useModalScrollLock'
 const certificates = {
   tryhackme: {
     title: 'TryHackMe SOC Level 1 Learning Path certificate',
-    banner: '/certificates/tryhackme-soc-banner.png',
-    hoverBanner: '/certificates/tryhackme-soc-banner-hover.png',
-    certificate: '/certificates/tryhackme-soc-certificate.jpg',
+    banner: publicAsset('/certificates/tryhackme-soc-banner.png'),
+    hoverBanner: publicAsset('/certificates/tryhackme-soc-banner-hover.png'),
+    certificate: publicAsset('/certificates/tryhackme-soc-certificate.jpg'),
     alt: 'TryHackMe SOC Level 1 Learning Path',
   },
   ibm: {
     title: 'IBM Security Operations Center in Practice certificate',
-    banner: '/certificates/ibm-soc-banner.png',
-    hoverBanner: '/certificates/ibm-soc-banner-hover.png',
-    certificate: '/certificates/ibm-certificate.jpg',
+    banner: publicAsset('/certificates/ibm-soc-banner.png'),
+    hoverBanner: publicAsset('/certificates/ibm-soc-banner-hover.png'),
+    certificate: publicAsset('/certificates/ibm-certificate.jpg'),
     alt: 'IBM SOC in practice',
   },
 }
@@ -59,3 +59,4 @@ export default function CertificateBanners() {
     </dialog>
   </>
 }
+import { publicAsset } from '../utils/publicAsset'

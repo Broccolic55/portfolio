@@ -32,7 +32,7 @@ h1, h2 { font-family: var(--font-system) !important; font-weight: 600 !important
 .site-header.scrolled .header-printer { display: none; }
 .header-printer-art { display: block; width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; pointer-events: none; }
 .header-printer.is-printing { animation: printer-body-jitter .13s steps(2,end) 10; transform-origin: center bottom; }
-.printer-screen-trigger { position: absolute; top: 31%; left: 12%; width: 22%; height: 28%; display: grid; place-items: center; padding: 0; border: 2px solid #17191a; background: #f6f6f2; color: #111; font-family: 'DM Mono', monospace; font-size: clamp(7px,.62vw,10px); font-weight: 800; line-height: 1.08; text-align: center; cursor: url('/images/pixel-cursor.svg') 1 1, pointer; image-rendering: pixelated; pointer-events: auto; }
+.printer-screen-trigger { position: absolute; top: 31%; left: 12%; width: 22%; height: 28%; display: grid; place-items: center; padding: 0; border: 2px solid #17191a; background: #f6f6f2; color: #111; font-family: 'DM Mono', monospace; font-size: clamp(7px,.62vw,10px); font-weight: 800; line-height: 1.08; text-align: center; cursor: url('../images/pixel-cursor.svg') 1 1, pointer; image-rendering: pixelated; pointer-events: auto; }
 .printer-screen-trigger span { text-shadow: 1px 0 currentColor; }
 .printer-screen-trigger:focus-visible { outline: 3px solid #63aa8b; outline-offset: 2px; }
 .header-printer.is-printing .printer-screen-trigger { animation: printer-screen-flicker .22s steps(2,end) 5; background: #e8efe9; }
@@ -51,7 +51,7 @@ h1, h2 { font-family: var(--font-system) !important; font-weight: 600 !important
 .printer-output-paper i:nth-child(5) { width: 71%; animation-delay: .6s; }
 .printer-output-paper i:nth-child(6) { width: 88%; animation-delay: .74s; }
 .printer-output-paper i:nth-child(7) { width: 64%; animation-delay: .88s; }
-.printed-resume { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; transform: rotate(3deg); border: 1px solid #e4e4dc; background: #fffefa; box-shadow: 0 16px 45px rgba(39,49,42,.2); cursor: url('/images/pixel-cursor.svg') 1 1, pointer; pointer-events: auto; transition: transform .22s ease,box-shadow .22s ease; animation: resume-paper-stick .45s cubic-bezier(.17,.74,.25,1.2) both; }
+.printed-resume { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; transform: rotate(3deg); border: 1px solid #e4e4dc; background: #fffefa; box-shadow: 0 16px 45px rgba(39,49,42,.2); cursor: url('../images/pixel-cursor.svg') 1 1, pointer; pointer-events: auto; transition: transform .22s ease,box-shadow .22s ease; animation: resume-paper-stick .45s cubic-bezier(.17,.74,.25,1.2) both; }
 .printed-resume:hover { transform: translateY(-5px) rotate(1deg); box-shadow: 0 22px 55px rgba(39,49,42,.24); }
 .printed-resume-tape { position: absolute; z-index: 2; top: -6px; width: 59px; height: 15px; background: rgba(43,45,49,.84); box-shadow: 0 1px 2px #0003; }
 .tape-left { left: -12px; transform: rotate(-36deg); }
@@ -179,14 +179,14 @@ h1, h2 { font-family: var(--font-system) !important; font-weight: 600 !important
 .journey-art svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .journey-art-university { aspect-ratio: 1.16; }
 .journey-university-building { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
-.journey-clay-sprite { display: block; width: 100%; height: 100%; transform: translateY(8%); background-image: url('/images/education-journey-sprite.png'); background-repeat: no-repeat; background-size: 400% 100%; background-position: var(--clay-position) bottom; }
+.journey-clay-sprite { display: block; width: 100%; height: 100%; transform: translateY(8%); background-image: url('../images/education-journey-sprite.png'); background-repeat: no-repeat; background-size: 400% 100%; background-position: var(--clay-position) bottom; }
 .journey-art-beginning { width: 52%; margin-inline: auto; }
 .journey-art-beginning .journey-clay-sprite { background-size: 500% 100%; }
 .journey-art-next { width: 100%; margin-inline: auto; }
 .journey-traveler { --walker-opacity: 0; position: absolute; z-index: 3; width: clamp(50px,6vw,78px); aspect-ratio: 1; left: 0; top: 0; opacity: var(--walker-opacity); transform: translate(-50%,-100%); pointer-events: none; will-change: left,top,opacity; transition: opacity .08s linear; }
 .journey-traveler::before { content: ''; position: absolute; z-index: 0; left: 50%; bottom: 2%; width: 220%; height: 66%; transform: translate(-50%,28%); border-radius: 50%; background: radial-gradient(ellipse,rgba(157,182,160,.28),rgba(177,196,179,.12) 38%,transparent 74%); filter: blur(5px); opacity: 0; transition: opacity .16s ease; }
 .journey-traveler.is-walking::before { opacity: 1; }
-.journey-traveler .journey-walker { position: absolute; inset: 0; background-image: url('/images/education-walk-cycle-cropped.png'); background-repeat: no-repeat; background-size: 400% 400%; background-position: var(--walker-frame-x,0%) var(--walker-frame-y,0%); image-rendering: pixelated; }
+.journey-traveler .journey-walker { position: absolute; inset: 0; background-image: url('../images/education-walk-cycle-cropped.png'); background-repeat: no-repeat; background-size: 400% 400%; background-position: var(--walker-frame-x,0%) var(--walker-frame-y,0%); image-rendering: pixelated; }
 .journey-traveler img { position: absolute; left: 0; bottom: 0; display: block; width: 100%; max-height: 150px; object-fit: contain; object-position: bottom center; image-rendering: pixelated; filter: drop-shadow(0 5px 3px rgba(38,40,48,.18)); }
 .journey-traveler .journey-fall { opacity: 0; transition: opacity .12s linear; }
 .journey-traveler.is-fallen { z-index: 5; opacity: 1; }

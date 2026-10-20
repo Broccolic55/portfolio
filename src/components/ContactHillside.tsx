@@ -6,12 +6,13 @@ const logos = [
 
 export default function ContactHillside() {
   return <div className="contact-landscape" aria-label="Connect with me">
-    <img className="contact-hillside-photo" src="/images/contact-hillside-premium.png" alt="A wildflower-covered green hillside beneath a cloudy sky" />
+    <img className="contact-hillside-photo" src={publicAsset('/images/contact-hillside-premium.png')} alt="A wildflower-covered green hillside beneath a cloudy sky" />
     <div className="contact-emblem-row">
       {logos.map(({ brand, label, image, href }) => <a key={brand} className={`contact-emblem contact-emblem-${brand}`} href={href} target={brand === 'email' ? undefined : '_blank'} rel={brand === 'email' ? undefined : 'noreferrer'} aria-label={brand === 'email' ? 'Send me an email' : `Visit my ${label} profile`}>
-        <img src={`/images/contact-logos/${image}`} alt="" />
+        <img src={publicAsset(`/images/contact-logos/${image}`)} alt="" />
       </a>)}
     </div>
-    <img className="contact-grass-foreground" src="/images/contact-hillside-premium.png" alt="" aria-hidden="true" />
+    <img className="contact-grass-foreground" src={publicAsset('/images/contact-hillside-premium.png')} alt="" aria-hidden="true" />
   </div>
 }
+import { publicAsset } from '../utils/publicAsset'

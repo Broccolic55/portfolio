@@ -152,7 +152,7 @@ export default function NoticeBoard() {
         <path className="notice-board-thread" d="M50 1 L8 11 M50 1 L92 11" />
       </svg>
       <span className="notice-board-hanger" aria-hidden="true"><i /></span>
-      <img className="notice-board-art" src="/noticeboard/board.png" alt="A corkboard of cybersecurity training, event posters, team photos, and achievement badges." draggable="false" />
+      <img className="notice-board-art" src={publicAsset('/noticeboard/board.png')} alt="A corkboard of cybersecurity training, event posters, team photos, and achievement badges." draggable="false" />
       {noticeItems.map(item => <button
         className="notice-board-pin"
         key={item.id}
@@ -166,7 +166,7 @@ export default function NoticeBoard() {
           height: `${item.h / BOARD_HEIGHT * 100}%`,
         }}
       >
-        <img src={`/noticeboard/${item.image}`} alt="" draggable="false" loading="lazy" decoding="async" />
+        <img src={publicAsset(`/noticeboard/${item.image}`)} alt="" draggable="false" loading="lazy" decoding="async" />
       </button>)}
     </div>
     <dialog className="notice-board-dialog" ref={dialogRef} aria-labelledby="notice-dialog-title" onClose={() => setActiveItem(null)} onClick={event => { if (event.target === dialogRef.current) closeDialog() }}>
@@ -179,3 +179,4 @@ export default function NoticeBoard() {
     </dialog>
   </div>
 }
+import { publicAsset } from '../utils/publicAsset'

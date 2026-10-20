@@ -1,3 +1,5 @@
+import { publicAsset } from '../utils/publicAsset'
+
 export const profile = {
   name: 'Abimanyu',
   shortName: 'ABIMANYU',
@@ -5,7 +7,7 @@ export const profile = {
   email: '',
   github: '',
   linkedin: '',
-  resume: '/resume.pdf',
+  resume: publicAsset('/resume/resume.pdf'),
   about: 'I’m a cybersecurity graduate with a Bachelor of Engineering in Cyber Security, graduating in 2026 with an 8.7 CGPA.',
   interests: ['Security Operations', 'SIEM', 'Network Security', 'Linux', 'Cloud Security', 'Web Application Security', 'Threat Detection', 'AI/ML for Security'],
   experience: [{ company: 'Big Bucks Innovation Private Limited', role: 'Cybersecurity / SOC Intern', period: 'Internship', details: ['Log monitoring and threat detection', 'Splunk dashboards and alerting', 'Firewall and authentication log analysis', 'Suspicious IP and brute-force detection'] }],
@@ -35,15 +37,15 @@ export const focusAreas = [
 export const featuredTools = [
   { name: 'Wireshark', mark: 'W', logo: 'https://cdn.simpleicons.org/wireshark/1679A7' },
   { name: 'Nmap', mark: 'N', logo: 'https://nmap.org/images/nmap-logo-256x256.png' },
-  { name: 'Metasploit', mark: 'M', logo: '/tools/metasploit.png' },
-  { name: 'Burp Suite', mark: 'B', logo: '/tools/burpsuite.png' },
-  { name: 'SQLmap', mark: 'SQL', logo: '/tools/sqlmap.png' },
-  { name: 'Netcat', mark: 'nc', logo: '/tools/netcat.png' },
-  { name: 'Exploit Database', mark: 'EDB', logo: '/tools/exploit-db.png' },
-  { name: 'John the Ripper', mark: 'JtR', logo: '/tools/john-the-ripper.svg' },
-  { name: 'PEASS-ng', mark: 'PEASS', logo: '/tools/peass-ng-logo.svg' },
-  { name: 'Visual Studio Code', mark: 'VS', logo: '/tools/vscode.png' },
-  { name: 'GitHub', mark: 'GH', logo: '/tools/github.png' },
+  { name: 'Metasploit', mark: 'M', logo: publicAsset('/tools/metasploit.png') },
+  { name: 'Burp Suite', mark: 'B', logo: publicAsset('/tools/burpsuite.png') },
+  { name: 'SQLmap', mark: 'SQL', logo: publicAsset('/tools/sqlmap.png') },
+  { name: 'Netcat', mark: 'nc', logo: publicAsset('/tools/netcat.png') },
+  { name: 'Exploit Database', mark: 'EDB', logo: publicAsset('/tools/exploit-db.png') },
+  { name: 'John the Ripper', mark: 'JtR', logo: publicAsset('/tools/john-the-ripper.svg') },
+  { name: 'PEASS-ng', mark: 'PEASS', logo: publicAsset('/tools/peass-ng-logo.svg') },
+  { name: 'Visual Studio Code', mark: 'VS', logo: publicAsset('/tools/vscode.png') },
+  { name: 'GitHub', mark: 'GH', logo: publicAsset('/tools/github.png') },
   { name: 'VirusTotal', mark: 'VT', logo: 'https://cdn.simpleicons.org/virustotal/394EFF' },
-  { name: 'Hydra', mark: 'H', logo: '/tools/hydra.png' },
+  { name: 'Hydra', mark: 'H', logo: publicAsset('/tools/hydra.png') },
 ]

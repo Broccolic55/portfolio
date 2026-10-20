@@ -4,16 +4,16 @@ import useModalScrollLock from '../hooks/useModalScrollLock'
 const certificates = {
   tryhackme: {
     title: 'TryHackMe SOC Level 1 Learning Path certificate',
-    banner: publicAsset('/certificates/tryhackme-soc-banner.png'),
-    hoverBanner: publicAsset('/certificates/tryhackme-soc-banner-hover.png'),
-    certificate: publicAsset('/certificates/tryhackme-soc-certificate.jpg'),
+    banner: publicAsset('/certificates/tryhackme-soc-banner.webp'),
+    hoverBanner: publicAsset('/certificates/tryhackme-soc-banner-hover.webp'),
+    certificate: publicAsset('/certificates/tryhackme-soc-certificate.webp'),
     alt: 'TryHackMe SOC Level 1 Learning Path',
   },
   ibm: {
     title: 'IBM Security Operations Center in Practice certificate',
-    banner: publicAsset('/certificates/ibm-soc-banner.png'),
-    hoverBanner: publicAsset('/certificates/ibm-soc-banner-hover.png'),
-    certificate: publicAsset('/certificates/ibm-certificate.jpg'),
+    banner: publicAsset('/certificates/ibm-soc-banner.webp'),
+    hoverBanner: publicAsset('/certificates/ibm-soc-banner-hover.webp'),
+    certificate: publicAsset('/certificates/ibm-certificate.webp'),
     alt: 'IBM SOC in practice',
   },
 }
@@ -54,7 +54,7 @@ export default function CertificateBanners() {
     <dialog className="certificate-dialog" ref={dialogRef} aria-label={active ? certificates[active].title : 'Certificate'} onClose={() => setActive(null)} onClick={event => { if (event.target === dialogRef.current) closeDialog() }}>
       {active && <div className="certificate-dialog-content">
         <button type="button" className="certificate-dialog-close" aria-label="Close certificate" autoFocus onClick={closeDialog}><span aria-hidden="true">×</span></button>
-        <img src={certificates[active].certificate} alt={certificates[active].title} loading="lazy" decoding="async" />
+        <img src={certificates[active].certificate} alt={certificates[active].title} loading="lazy" decoding="async" fetchPriority="high" />
       </div>}
     </dialog>
   </>

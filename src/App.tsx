@@ -6,10 +6,10 @@ import ResumePdf from './components/ResumePdf'
 import NoticeBoard from './components/NoticeBoard'
 import CertificateBanners from './components/CertificateBanners'
 import ContactHillside from './components/ContactHillside'
-import securityMonitoringArchitecture from './assets/security-monitoring-architecture.png'
-import homeFirewallArchitecture from './assets/home-firewall-architecture.png'
-import mriSecurityArchitecture from './assets/mri-security-architecture.png'
-import healthcareFederatedArchitecture from './assets/healthcare-federated-learning-architecture.png'
+import securityMonitoringArchitecture from './assets/security-monitoring-architecture.webp'
+import homeFirewallArchitecture from './assets/home-firewall-architecture.webp'
+import mriSecurityArchitecture from './assets/mri-security-architecture.webp'
+import healthcareFederatedArchitecture from './assets/healthcare-federated-learning-architecture.webp'
 
 const navLinks = [['Home', 'home'], ['About', 'about'], ['Training & Certifications', 'certifications'], ['Tools', 'tools'], ['Projects', 'projects'], ['Contact', 'contact']]
 const resumeFile = Object.entries(import.meta.glob('/resume/*.pdf', { eager: true, query: '?url', import: 'default' }) as Record<string, string>)[0]
@@ -854,7 +854,7 @@ function App() {
             <div className="project-architecture-wrap">
               <div className="project-dialog-label">{selectedProjectTitle === 'Security Monitoring Lab' ? 'LAB ARCHITECTURE' : selectedProjectTitle === 'Real-Time Dynamic Firewall Configuration for Home Devices' ? 'NETWORK ARCHITECTURE' : selectedProjectTitle === 'Securing MRI Images Using Steganography & Cryptographic Protection' ? 'MRI SECURITY ARCHITECTURE' : 'PRIVACY-PRESERVING AI ARCHITECTURE'}</div>
               <button className="project-architecture-trigger" type="button" aria-label={`Enlarge ${selectedProjectTitle} architecture`} onClick={() => setShowArchitecture(true)}>
-                <img className="project-architecture" src={selectedArchitecture} alt={`${selectedProjectTitle} architecture diagram.`} />
+                <img className="project-architecture" src={selectedArchitecture} alt={`${selectedProjectTitle} architecture diagram.`} decoding="async" fetchPriority="high" />
               </button>
             </div>
             <div className="project-detail-sections">
@@ -869,7 +869,7 @@ function App() {
         </section>
         {showArchitecture && <div className="soc-architecture-lightbox" role="dialog" aria-modal="true" aria-label="Security monitoring lab architecture" onMouseDown={event => { if (event.target === event.currentTarget) setShowArchitecture(false) }}>
           <button className="soc-architecture-lightbox-close" type="button" aria-label="Close enlarged architecture" onClick={() => setShowArchitecture(false)}>×</button>
-          <img src={selectedArchitecture ?? securityMonitoringArchitecture} alt={`Enlarged ${selectedProjectTitle} architecture diagram`} />
+          <img src={selectedArchitecture ?? securityMonitoringArchitecture} alt={`Enlarged ${selectedProjectTitle} architecture diagram`} decoding="async" fetchPriority="high" />
         </div>}
       </div>}
 

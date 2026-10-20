@@ -805,7 +805,7 @@ function App() {
     </div>}
     <a className="skip-link" href="#main">Skip to content</a>
     <header className={`site-header ${scrolled ? 'scrolled' : ''} ${headerHidden ? 'is-hidden' : ''}`}>
-      <div className="nav-wrap"><div className="brand"><button className="brand-mark brand-logo-button" type="button" aria-label="Show collectible card" onClick={() => setShowMagicCard(true)}><img src="/images/pola.jpeg" alt="" /></button><a className="brand-name" href="#home"><span>{profile.shortName}<small>SECURITY PORTFOLIO</small></span></a></div>
+      <div className="nav-wrap"><div className="brand"><button className="brand-mark brand-logo-button" type="button" aria-label="Show collectible card" onClick={() => setShowMagicCard(true)}><img src="/images/pola.jpeg" alt="" /></button><a className="brand-name" href="#home"><span>Abimanyu - Portfolio</span></a></div>
         <button className="menu-toggle" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span/><span/></button>
         <nav className={menuOpen ? 'open' : ''} aria-label='Main navigation'>{navLinks.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}</nav>
         <div className={`header-printer ${resumePrintState === 'printing' ? 'is-printing' : ''}`} ref={printerRef}>

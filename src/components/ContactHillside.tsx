@@ -1,7 +1,7 @@
 const logos = [
   { brand: 'github', label: 'GitHub', image: 'github-plaque.png', href: 'https://github.com/Broccolic55' },
   { brand: 'linkedin', label: 'LinkedIn', image: 'linkedin-plaque.png', href: 'https://www.linkedin.com/in/abimanyu-m/' },
-  { brand: 'email', label: 'Email', image: 'gmail-plaque.png', href: 'https://mail.google.com/mail/u/0/#inbox?compose=new&to=abimanyu.mva%40gmail.com' },
+  { brand: 'email', label: 'Email', image: 'gmail-plaque.png', href: 'mailto:abimanyu1452005@gmail.com' },
 ]
 
 export default function ContactHillside() {

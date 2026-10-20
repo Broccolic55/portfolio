@@ -179,14 +179,14 @@ h1, h2 { font-family: var(--font-system) !important; font-weight: 600 !important
 .journey-art svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .journey-art-university { aspect-ratio: 1.16; }
 .journey-university-building { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
-.journey-clay-sprite { display: block; width: 100%; height: 100%; transform: translateY(8%); background-image: url('../images/education-journey-sprite.png'); background-repeat: no-repeat; background-size: 400% 100%; background-position: var(--clay-position) bottom; }
+.journey-clay-sprite { display: block; width: 100%; height: 100%; transform: translateY(8%); background-image: url('../images/education-journey-sprite.webp'); background-repeat: no-repeat; background-size: 400% 100%; background-position: var(--clay-position) bottom; }
 .journey-art-beginning { width: 52%; margin-inline: auto; }
 .journey-art-beginning .journey-clay-sprite { background-size: 500% 100%; }
 .journey-art-next { width: 100%; margin-inline: auto; }
 .journey-traveler { --walker-opacity: 0; position: absolute; z-index: 3; width: clamp(50px,6vw,78px); aspect-ratio: 1; left: 0; top: 0; opacity: var(--walker-opacity); transform: translate(-50%,-100%); pointer-events: none; will-change: left,top,opacity; transition: opacity .08s linear; }
 .journey-traveler::before { content: ''; position: absolute; z-index: 0; left: 50%; bottom: 2%; width: 220%; height: 66%; transform: translate(-50%,28%); border-radius: 50%; background: radial-gradient(ellipse,rgba(157,182,160,.28),rgba(177,196,179,.12) 38%,transparent 74%); filter: blur(5px); opacity: 0; transition: opacity .16s ease; }
 .journey-traveler.is-walking::before { opacity: 1; }
-.journey-traveler .journey-walker { position: absolute; inset: 0; background-image: url('../images/education-walk-cycle-cropped.png'); background-repeat: no-repeat; background-size: 400% 400%; background-position: var(--walker-frame-x,0%) var(--walker-frame-y,0%); image-rendering: pixelated; }
+.journey-traveler .journey-walker { position: absolute; inset: 0; background-image: url('../images/education-walk-cycle-cropped.webp'); background-repeat: no-repeat; background-size: 400% 400%; background-position: var(--walker-frame-x,0%) var(--walker-frame-y,0%); image-rendering: pixelated; }
 .journey-traveler img { position: absolute; left: 0; bottom: 0; display: block; width: 100%; max-height: 150px; object-fit: contain; object-position: bottom center; image-rendering: pixelated; filter: drop-shadow(0 5px 3px rgba(38,40,48,.18)); }
 .journey-traveler .journey-fall { opacity: 0; transition: opacity .12s linear; }
 .journey-traveler.is-fallen { z-index: 5; opacity: 1; }

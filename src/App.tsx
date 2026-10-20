@@ -34,7 +34,7 @@ const educationMilestones = [
 function EducationArtwork({ kind }: { kind: string }) {
   const positions: Record<string, string> = { beginning: '0%', school: '33.333%', highschool: '66.666%' }
   if (kind === 'next') return <svg viewBox="0 0 180 220" aria-hidden="true"><defs><linearGradient id="office-clay" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#fff0d7"/><stop offset="1" stopColor="#d6bfa7"/></linearGradient><linearGradient id="office-glass" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#a8e1df"/><stop offset="1" stopColor="#5d9da5"/></linearGradient></defs><ellipse cx="90" cy="205" rx="66" ry="9" fill="#687b9b" opacity=".14"/><rect x="43" y="67" width="94" height="129" rx="13" fill="url(#office-clay)"/><path d="M36 68q0-12 12-12h84q12 0 12 12v10H36z" fill="#4e9e9a"/><path d="M73 78h34v118H73z" fill="#d79570"/><path d="M52 93h13v17H52zm63 0h13v17h-13zM52 121h13v17H52zm63 0h13v17h-13zM52 149h13v17H52zm63 0h13v17h-13z" fill="url(#office-glass)"/><path d="M80 87h20v18H80zm0 28h20v18H80zm0 28h20v18H80z" fill="#f5e4cd"/><path d="M35 194h110q8 0 11 8H27q2-8 8-8" fill="#9f8162"/><circle cx="90" cy="42" r="20" fill="#e7c8a5"/><path d="M90 26v16l12 8" fill="none" stroke="#6c6970" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/></svg>
-  if (kind === 'university') return <img className="journey-university-building" src={publicAsset("/images/university-building-clay.png")} alt="" />
+  if (kind === 'university') return <img className="journey-university-building" src={publicAsset("/images/university-building-clay.png")} loading="lazy" decoding="async" alt="" />
   return <span className="journey-clay-sprite" style={{ '--clay-position': positions[kind] ?? '100%' } as React.CSSProperties} aria-hidden="true" />
 }
 
@@ -559,13 +559,13 @@ function App() {
               <h3>SIEM Tools:</h3>
               <div className="siem-tool-logos" aria-label="Elastic, Wazuh, and Splunk">
                 <span className="siem-tool-logo" role="img" aria-label="Elastic" tabIndex={0}>
-                  <img src={publicAsset("/images/siem-tools/elastic.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">Elastic</span>
+                  <img src={publicAsset("/images/siem-tools/elastic.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">Elastic</span>
                 </span>
                 <span className="siem-tool-logo" role="img" aria-label="Wazuh" tabIndex={0}>
-                  <img src={publicAsset("/images/siem-tools/wazuh.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">Wazuh</span>
+                  <img src={publicAsset("/images/siem-tools/wazuh.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">Wazuh</span>
                 </span>
                 <span className="siem-tool-logo" role="img" aria-label="Splunk" tabIndex={0}>
-                  <img src={publicAsset("/images/siem-tools/splunk.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">Splunk</span>
+                  <img src={publicAsset("/images/siem-tools/splunk.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">Splunk</span>
                 </span>
               </div>
             </section>
@@ -585,7 +585,7 @@ function App() {
               <h3>Alert Management Tool:</h3>
               <div className="siem-tool-logos" aria-label="Jira">
                 <span className="jira-lockup" role="img" aria-label="Jira logo">
-                  <img src={publicAsset("/images/siem-tools/jira.png")} alt=""/>
+                  <img src={publicAsset("/images/siem-tools/jira.png")} loading="lazy" decoding="async" alt=""/>
                 </span>
               </div>
             </section>
@@ -615,19 +615,19 @@ function App() {
               <h3>Tools:</h3>
               <div className="siem-tool-logos" aria-label="Wireshark, tcpdump, Snort, Suricata, and Zeek">
                 <span className="siem-tool-logo" role="img" aria-label="Wireshark" tabIndex={0}>
-                  <img src={publicAsset("/images/siem-tools/wireshark.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">Wireshark</span>
+                  <img src={publicAsset("/images/siem-tools/wireshark.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">Wireshark</span>
                 </span>
                 <span className="siem-tool-logo network-tool-logo wide-tool-logo" role="img" aria-label="tcpdump and libpcap" tabIndex={0}>
-                  <img src={publicAsset("/images/network-tools/tcpdump.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">tcpdump / libpcap</span>
+                  <img src={publicAsset("/images/network-tools/tcpdump.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">tcpdump / libpcap</span>
                 </span>
                 <span className="siem-tool-logo network-tool-logo wide-tool-logo" role="img" aria-label="Snort" tabIndex={0}>
-                  <img src={publicAsset("/images/network-tools/snort.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">Snort</span>
+                  <img src={publicAsset("/images/network-tools/snort.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">Snort</span>
                 </span>
                 <span className="siem-tool-logo network-tool-logo" role="img" aria-label="Suricata" tabIndex={0}>
-                  <img src={publicAsset("/images/network-tools/suricata.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">Suricata</span>
+                  <img src={publicAsset("/images/network-tools/suricata.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">Suricata</span>
                 </span>
                 <span className="siem-tool-logo network-tool-logo" role="img" aria-label="Zeek" tabIndex={0}>
-                  <img src={publicAsset("/images/network-tools/zeek.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">Zeek</span>
+                  <img src={publicAsset("/images/network-tools/zeek.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">Zeek</span>
                 </span>
               </div>
             </section>
@@ -637,10 +637,10 @@ function App() {
               <h3>Well Known Distributions:</h3>
               <div className="siem-tool-logos" aria-label="Ubuntu and Kali Linux">
                 <span className="siem-tool-logo linux-distro-logo ubuntu-logo" role="img" aria-label="Ubuntu" tabIndex={0}>
-                  <img src={publicAsset("/images/linux-distros/ubuntu.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">Ubuntu</span>
+                  <img src={publicAsset("/images/linux-distros/ubuntu.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">Ubuntu</span>
                 </span>
                 <span className="siem-tool-logo linux-distro-logo kali-logo" role="img" aria-label="Kali Linux" tabIndex={0}>
-                  <img src={publicAsset("/images/linux-distros/kali-linux.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">Kali Linux</span>
+                  <img src={publicAsset("/images/linux-distros/kali-linux.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">Kali Linux</span>
                 </span>
               </div>
             </section>
@@ -709,13 +709,13 @@ function App() {
               <h3>Web Attack / Security Tools:</h3>
               <div className="siem-tool-logos" aria-label="Burp Suite, Nikto, and ModSecurity">
                 <span className="siem-tool-logo" role="img" aria-label="Burp Suite" tabIndex={0}>
-                  <img src={publicAsset("/images/web-tools/zap.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">Burp Suite</span>
+                  <img src={publicAsset("/images/web-tools/zap.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">Burp Suite</span>
                 </span>
                 <span className="siem-tool-logo" role="img" aria-label="Nikto" tabIndex={0}>
-                  <img src={publicAsset("/images/web-tools/burp-suite.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">Nikto</span>
+                  <img src={publicAsset("/images/web-tools/burp-suite.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">Nikto</span>
                 </span>
                 <span className="siem-tool-logo wide-tool-logo" role="img" aria-label="ModSecurity" tabIndex={0}>
-                  <img src={publicAsset("/images/web-tools/modsecurity.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">ModSecurity</span>
+                  <img src={publicAsset("/images/web-tools/modsecurity.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">ModSecurity</span>
                 </span>
               </div>
             </section>
@@ -784,19 +784,19 @@ function App() {
               <h3>Tools/Framework:</h3>
               <div className="siem-tool-logos" aria-label="VirusTotal, AbuseIPDB, OpenCTI, MISP, and MITRE ATT&CK">
                 <span className="siem-tool-logo" role="img" aria-label="VirusTotal" tabIndex={0}>
-                  <img src={publicAsset("/images/threat-tools/virustotal.svg")} alt=""/><span className="siem-tool-name" aria-hidden="true">VirusTotal</span>
+                  <img src={publicAsset("/images/threat-tools/virustotal.svg")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">VirusTotal</span>
                 </span>
                 <span className="siem-tool-logo" role="img" aria-label="AbuseIPDB" tabIndex={0}>
-                  <img src={publicAsset("/images/threat-tools/anti-hat-mark.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">AbuseIPDB</span>
+                  <img src={publicAsset("/images/threat-tools/anti-hat-mark.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">AbuseIPDB</span>
                 </span>
                 <span className="siem-tool-logo wide-tool-logo opencti-logo" role="img" aria-label="OpenCTI" tabIndex={0}>
-                  <img src={publicAsset("/images/threat-tools/opencti.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">OpenCTI</span>
+                  <img src={publicAsset("/images/threat-tools/opencti.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">OpenCTI</span>
                 </span>
                 <span className="siem-tool-logo" role="img" aria-label="MISP Threat Sharing" tabIndex={0}>
-                  <img src={publicAsset("/images/threat-tools/misp.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">MISP</span>
+                  <img src={publicAsset("/images/threat-tools/misp.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">MISP</span>
                 </span>
                 <span className="siem-tool-logo wide-tool-logo" role="img" aria-label="MITRE ATT&CK" tabIndex={0}>
-                  <img src={publicAsset("/images/threat-tools/mitre-attack.png")} alt=""/><span className="siem-tool-name" aria-hidden="true">MITRE ATT&amp;CK</span>
+                  <img src={publicAsset("/images/threat-tools/mitre-attack.png")} loading="lazy" decoding="async" alt=""/><span className="siem-tool-name" aria-hidden="true">MITRE ATT&amp;CK</span>
                 </span>
               </div>
             </section>
@@ -810,7 +810,7 @@ function App() {
         <button className="menu-toggle" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span/><span/></button>
         <nav className={menuOpen ? 'open' : ''} aria-label='Main navigation'>{navLinks.map(([label, id]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}</nav>
         <div className={`header-printer ${resumePrintState === 'printing' ? 'is-printing' : ''}`} ref={printerRef}>
-          <img className="header-printer-art" src={publicAsset("/images/pixel-resume-station.png")} alt="" aria-hidden="true" />
+          <img className="header-printer-art" src={publicAsset("/images/pixel-resume-station.png")} loading="lazy" decoding="async" alt="" aria-hidden="true" />
           <button className="printer-screen-trigger" type="button" disabled={resumePrintState === 'printing'} onClick={startResumePrint} aria-label={resumePrintState === 'printing' ? 'Printing resume' : 'Print resume from the pixel computer'}>
             {resumePrintState === 'printing' ? <><span>PRINTING</span><i aria-hidden="true" /></> : <span>VIEW<br/>RESUME</span>}
           </button>
@@ -824,11 +824,11 @@ function App() {
 
     <main id="main">
       <section className="hero section-shell" id="home"><div className="hero-copy"><h1 aria-label="Cybersecurity Engineer: exploring offensive security and defensive operations"><span className="hero-static-prefix">{profile.title}</span>{' '}<span className="hero-rotator" aria-hidden="true"><span>{visibleBefore}</span><em className={`hero-phrase-highlight ${currentHeroPhrase.tone}`}>{visibleHighlight}</em><span>{visibleAfter}</span><i className="hero-type-caret"/></span></h1><p className="hero-intro">Hi, my name is Abimanyu. I’m a 21-year-old junior cybersecurity engineer interested in security operations and looking for a job, currently located in Chennai.</p><div className="hero-contact-links"><a className="hero-contact-link linkedin-link" href="https://www.linkedin.com/in/abimanyu-m/" target="_blank" rel="noreferrer" aria-label="Open Abimanyu's LinkedIn profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55C2.7 2 2 2.67 2 3.5v17c0 .83.7 1.5 1.55 1.5h16.9c.86 0 1.55-.67 1.55-1.5v-17c0-.83-.69-1.5-1.55-1.5ZM8 19H5V9h3v10ZM6.5 7.73a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5ZM19 19h-3v-4.87c0-2.92-3.5-2.7-3.5 0V19h-3V9h3v1.6c1.4-2.6 6.5-2.8 6.5 2.5V19Z"/></svg></a><a className="hero-contact-link email-link" href="https://mail.google.com/mail/u/0/#inbox?compose=new&amp;to=abimanyu.mva%40gmail.com" aria-label="Compose an email to Abimanyu at abimanyu.mva@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5h18A1.5 1.5 0 0 1 22.5 7v10a1.5 1.5 0 0 1-1.5 1.5H3A1.5 1.5 0 0 1 1.5 17V7A1.5 1.5 0 0 1 3 5.5Z"/><path d="m2.5 7 9.5 7 9.5-7"/></svg></a><a className="hero-contact-link github-link" href="https://github.com/Broccolic55" target="_blank" rel="noreferrer" aria-label="Open Abimanyu's GitHub profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.82c.56.1.77-.24.77-.54v-2.1c-3.14.68-3.8-1.33-3.8-1.33-.5-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1.77 2.02 3.22 1.46.1-.72.4-1.21.7-1.49-2.5-.28-5.13-1.25-5.13-5.54 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.11-2.96 0 0 .95-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.12 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.63 5.25-5.14 5.53.4.35.75 1.03.75 2.08v3.08c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/></svg></a></div></div>
-        <div className="hero-portrait" role="img" aria-label="Abimanyu studying; hover to see him wave"><img className="hero-portrait-study" src={publicAsset("/images/abi-study.png")} alt="" /><img className="hero-portrait-wave" src={publicAsset("/images/abi-wave.png")} alt="" /></div>
+        <div className="hero-portrait" role="img" aria-label="Abimanyu studying; hover to see him wave"><img className="hero-portrait-study" src={publicAsset("/images/abi-study.webp")} alt="" loading="eager" fetchPriority="high" decoding="async" /><img className="hero-portrait-wave" src={publicAsset("/images/abi-wave.webp")} alt="" loading="eager" decoding="async" /></div>
         <div className="hero-index"><span>01</span><div/></div>
       </section>
 
-      <section className="about section-shell" id="about"><div className="section-marker"><span>01</span><span>ABOUT</span></div><SectionHead eyebrow="ABOUT" title="ABOUT ME" className="about-section-head"/><div className="about-grid"><p className="about-lead">{profile.about}</p></div><div className="education-journey" style={{ '--journey-height': `${educationMilestones.length * 100}vh`, '--journey-count': educationMilestones.length } as React.CSSProperties}><div className="education-journey-stage"><div className="education-journey-frame"><header className="journey-header"><div><span className="journey-eyebrow">EDUCATION</span><h3>My Journey so far</h3></div></header><div className={`journey-map ${postFallVisible ? 'is-post-fall-visible' : ''}`}><svg className="journey-route" viewBox="0 0 1200 580" preserveAspectRatio="none" aria-hidden="true"><path className="journey-route-base" d="M96 490 C200 485 220 450 336 450 S470 450 588 400 S720 350 840 350 S965 340 1020 330"/><path className="journey-route-progress" d="M96 490 C200 485 220 450 336 450 S470 450 588 400 S720 350 840 350 S965 340 1020 330"/><path className="journey-route-future" d="M1020 330 C1040 326 1060 321 1080 312"/><g className="journey-route-nodes"><circle cx="336" cy="450" r="8"/><circle cx="588" cy="400" r="8"/><circle cx="840" cy="350" r="8"/><circle cx="1020" cy="330" r="8"/></g></svg><div className="journey-traveler" aria-hidden="true"><div className="journey-walker"/><img className="journey-fall" src={publicAsset("/images/education-fall-job.png")} alt=""/></div><div className="journey-post-fall" aria-hidden="true"><img className="journey-post-fall-message" src={publicAsset("/images/journey-come-on.png")} alt=""/><img className="journey-post-fall-character" src={publicAsset("/images/journey-slender-character.png")} alt=""/></div>{educationMilestones.map((milestone, index) => { const positions = [[8, 84.5], [28, 77.6], [49, 69], [70, 60.3], [85, 56.9]][index]; return <div className={`journey-stop ${educationStep === index ? 'is-active' : ''} ${educationStep > index ? 'has-passed' : ''}`} key={milestone.key} style={{ left: `${positions[0]}%`, top: `${positions[1]}%` }} aria-current={educationStep === index ? 'step' : 'false'} aria-hidden={educationStep !== index}>{milestone.kind !== 'next' && <div className={`journey-art journey-art-${milestone.kind}`}><EducationArtwork kind={milestone.kind}/></div>}{milestone.kind !== 'beginning' && <span className="journey-stop-pin"/>}</div> })}</div><article className="journey-detail" key={currentEducation.key} aria-live="polite"><div className="journey-detail-top"><span>{currentEducation.label}</span><span>{currentEducation.year}</span></div><h4>{currentEducation.title}</h4><p>{currentEducation.subtitle}</p><strong className={/score|cgpa/i.test(currentEducation.result) ? 'journey-metric' : undefined}>{currentEducation.result}</strong></article><div className="journey-footer"><span>SCROLL TO FOLLOW THE JOURNEY</span><span>{String(educationStep + 1).padStart(2, '0')} / {String(educationMilestones.length).padStart(2, '0')}</span></div></div></div></div></section>
+      <section className="about section-shell" id="about"><div className="section-marker"><span>01</span><span>ABOUT</span></div><SectionHead eyebrow="ABOUT" title="ABOUT ME" className="about-section-head"/><div className="about-grid"><p className="about-lead">{profile.about}</p></div><div className="education-journey" style={{ '--journey-height': `${educationMilestones.length * 100}vh`, '--journey-count': educationMilestones.length } as React.CSSProperties}><div className="education-journey-stage"><div className="education-journey-frame"><header className="journey-header"><div><span className="journey-eyebrow">EDUCATION</span><h3>My Journey so far</h3></div></header><div className={`journey-map ${postFallVisible ? 'is-post-fall-visible' : ''}`}><svg className="journey-route" viewBox="0 0 1200 580" preserveAspectRatio="none" aria-hidden="true"><path className="journey-route-base" d="M96 490 C200 485 220 450 336 450 S470 450 588 400 S720 350 840 350 S965 340 1020 330"/><path className="journey-route-progress" d="M96 490 C200 485 220 450 336 450 S470 450 588 400 S720 350 840 350 S965 340 1020 330"/><path className="journey-route-future" d="M1020 330 C1040 326 1060 321 1080 312"/><g className="journey-route-nodes"><circle cx="336" cy="450" r="8"/><circle cx="588" cy="400" r="8"/><circle cx="840" cy="350" r="8"/><circle cx="1020" cy="330" r="8"/></g></svg><div className="journey-traveler" aria-hidden="true"><div className="journey-walker"/><img className="journey-fall" src={publicAsset("/images/education-fall-job.png")} loading="lazy" decoding="async" alt=""/></div><div className="journey-post-fall" aria-hidden="true"><img className="journey-post-fall-message" src={publicAsset("/images/journey-come-on.png")} loading="lazy" decoding="async" alt=""/><img className="journey-post-fall-character" src={publicAsset("/images/journey-slender-character.png")} loading="lazy" decoding="async" alt=""/></div>{educationMilestones.map((milestone, index) => { const positions = [[8, 84.5], [28, 77.6], [49, 69], [70, 60.3], [85, 56.9]][index]; return <div className={`journey-stop ${educationStep === index ? 'is-active' : ''} ${educationStep > index ? 'has-passed' : ''}`} key={milestone.key} style={{ left: `${positions[0]}%`, top: `${positions[1]}%` }} aria-current={educationStep === index ? 'step' : 'false'} aria-hidden={educationStep !== index}>{milestone.kind !== 'next' && <div className={`journey-art journey-art-${milestone.kind}`}><EducationArtwork kind={milestone.kind}/></div>}{milestone.kind !== 'beginning' && <span className="journey-stop-pin"/>}</div> })}</div><article className="journey-detail" key={currentEducation.key} aria-live="polite"><div className="journey-detail-top"><span>{currentEducation.label}</span><span>{currentEducation.year}</span></div><h4>{currentEducation.title}</h4><p>{currentEducation.subtitle}</p><strong className={/score|cgpa/i.test(currentEducation.result) ? 'journey-metric' : undefined}>{currentEducation.result}</strong></article><div className="journey-footer"><span>SCROLL TO FOLLOW THE JOURNEY</span><span>{String(educationStep + 1).padStart(2, '0')} / {String(educationMilestones.length).padStart(2, '0')}</span></div></div></div></div></section>
 
       <section className="focus section-shell" id="focus"><div className="section-marker"><span>02</span><span>AREAS OF FOCUS</span></div><SectionHead eyebrow="SECURITY, FROM THE SYSTEM UP" title="Areas I’m working on" copy="A broad foundation with a hands-on focus on defensive security and understanding the underlying systems." className="focus-section-head"/><div className="focus-scene-shell"><iframe className="focus-scene-frame" title="Interactive glass cards for cybersecurity focus areas" src={publicAsset("/areas-focus/index.html")} loading="lazy" allow="fullscreen" /></div><p className="focus-scene-hint" aria-hidden="true">DRAG TO EXPLORE · SCROLL TO MOVE</p></section>
       <CredentialsSection />
@@ -877,7 +877,7 @@ function App() {
       <section className="learning section-shell">
         <div className="ai-feature-grid">
           <div className="ai-feature-copy"><span className="eyebrow">CURRENTLY EXPLORING</span><h2>Adapting to the AI Era</h2><p>I can vibe-code applications, use agentic AI to automate tasks, and learn complex topics in depth. I bring these skills into cybersecurity to investigate threats, analyze security data, and build practical defensive tools.</p></div>
-          <figure className="ai-feature-visual"><img src={publicAsset("/images/ai-helpers.webp")} alt="Abimanyu with an AI assistant robot" loading="lazy" decoding="async" /></figure>
+          <figure className="ai-feature-visual"><img src={publicAsset("/images/ai-helpers.webp")} loading="lazy" decoding="async" alt="Abimanyu with an AI assistant robot" /></figure>
         </div>
       </section>
 
@@ -888,7 +888,7 @@ function App() {
 
     {showResume && <div className={`resume-overlay ${resumeClosing ? 'is-closing' : ''}`} role="presentation" onClick={closeResume}><section className="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-dialog-title" onClick={event => event.stopPropagation()}><div className="resume-book"><ResumePdf src={resumeUrl}/><div className="resume-toolbar"><h2 id="resume-dialog-title">Resume</h2><div><a className="resume-icon-button resume-download" href={resumeUrl} download={resumeFilename} aria-label="Download resume"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg></a><button className="resume-icon-button resume-close" type="button" aria-label="Close resume" onClick={closeResume}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg></button></div></div></div></section></div>}
 
-    {showMagicCard && <div className="magic-card-backdrop" role="presentation" onClick={() => setShowMagicCard(false)}><div className="magic-card-dialog" role="dialog" aria-modal="true" aria-label="Collectible card" onClick={event => event.stopPropagation()}><button className="magic-card-close" type="button" aria-label="Close card" onClick={() => setShowMagicCard(false)}>×</button><img className="magic-card-art" src={publicAsset("/images/card.png")} alt="A collectible cybersecurity engineer card."/><div className="magic-card-caption"><span>SECURITY PORTFOLIO</span><strong><i className="rare-gem" aria-hidden="true"/>RARE FIND</strong></div></div></div>}
+    {showMagicCard && <div className="magic-card-backdrop" role="presentation" onClick={() => setShowMagicCard(false)}><div className="magic-card-dialog" role="dialog" aria-modal="true" aria-label="Collectible card" onClick={event => event.stopPropagation()}><button className="magic-card-close" type="button" aria-label="Close card" onClick={() => setShowMagicCard(false)}>×</button><img className="magic-card-art" src={publicAsset("/images/card.png")} loading="lazy" decoding="async" alt="A collectible cybersecurity engineer card."/><div className="magic-card-caption"><span>SECURITY PORTFOLIO</span><strong><i className="rare-gem" aria-hidden="true"/>RARE FIND</strong></div></div></div>}
   </>
 }
 

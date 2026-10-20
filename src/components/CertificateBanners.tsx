@@ -47,14 +47,14 @@ export default function CertificateBanners() {
         aria-label={`View ${certificate.title}`}
         onClick={() => { openedAtScrollY.current = window.scrollY; setActive(id) }}
       >
-        <img className="credential-banner-default" src={certificate.banner} alt={certificate.alt} />
-        <img className="credential-banner-hover" src={certificate.hoverBanner} alt="" aria-hidden="true" />
+        <img className="credential-banner-default" src={certificate.banner} alt={certificate.alt} loading="lazy" decoding="async" />
+        <img className="credential-banner-hover" src={certificate.hoverBanner} alt="" aria-hidden="true" loading="lazy" decoding="async" />
       </button>)}
     </div>
     <dialog className="certificate-dialog" ref={dialogRef} aria-label={active ? certificates[active].title : 'Certificate'} onClose={() => setActive(null)} onClick={event => { if (event.target === dialogRef.current) closeDialog() }}>
       {active && <div className="certificate-dialog-content">
         <button type="button" className="certificate-dialog-close" aria-label="Close certificate" autoFocus onClick={closeDialog}><span aria-hidden="true">×</span></button>
-        <img src={certificates[active].certificate} alt={certificates[active].title} />
+        <img src={certificates[active].certificate} alt={certificates[active].title} loading="lazy" decoding="async" />
       </div>}
     </dialog>
   </>

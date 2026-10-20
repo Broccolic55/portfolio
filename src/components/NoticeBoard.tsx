@@ -152,7 +152,7 @@ export default function NoticeBoard() {
         <path className="notice-board-thread" d="M50 1 L8 11 M50 1 L92 11" />
       </svg>
       <span className="notice-board-hanger" aria-hidden="true"><i /></span>
-      <img className="notice-board-art" src={publicAsset('/noticeboard/board.png')} alt="A corkboard of cybersecurity training, event posters, team photos, and achievement badges." draggable="false" />
+      <img className="notice-board-art" src={publicAsset('/noticeboard/board.png')} alt="A corkboard of cybersecurity training, event posters, and achievement badges." draggable="false" loading="lazy" decoding="async" />
       {noticeItems.map(item => <button
         className="notice-board-pin"
         key={item.id}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Cybersecurity Focus Areas — Glass Carousel</title>
+    <meta name="description" content="An interactive Three.js glass carousel exploring cybersecurity focus areas." />
+    
+    <!-- Google Fonts: Space Grotesk, Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="/areas-focus/assets/index-Cq5mc_4f.js"></script>
+    <link rel="stylesheet" crossorigin href="/areas-focus/assets/index-DWztG8gY.css">
+    <style>
+      /* Show the glass backdrop on the same frame the inspector opens. */
+      .inspect-overlay { transition: none !important; }
+      .inspect-backdrop { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+      /* The portfolio page owns the visible dialog. Remove the iframe copy
+         from rendering once the parent has received the selected card. */
+      .inspect-overlay.parent-rendered { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <!-- Fullscreen 3D WebGL Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Custom Subtle Cursor Follower -->
+    <div id="custom-cursor" aria-hidden="true">
+      <div class="cursor-dot"></div>
+      <div class="cursor-ring"></div>
+    </div>
+
+    <!-- Modal Dossier / Card Inspector -->
+    <div id="inspect-modal" class="inspect-overlay" aria-modal="true" role="dialog" aria-hidden="true">
+      <div class="inspect-backdrop" id="inspect-backdrop"></div>
+      
+      <div class="inspect-container">
+        <button id="btn-close-inspect" class="inspect-close-btn" aria-label="Close Specimen Dossier">✕</button>
+
+        <div class="inspect-card-content">
+          <!-- Left Visual Preview -->
+          <div class="inspect-visual-col" id="inspect-visual">
+            <div class="inspect-image-wrapper">
+              <img id="inspect-image" src="" alt="Specimen Artwork" />
+            </div>
+          </div>
+
+          <!-- Right Technical Dossier -->
+          <div class="inspect-info-col">
+            <div class="inspect-header">
+              <span id="inspect-category" class="dossier-tag">CELESTIAL // ARRAY</span>
+              <h1 id="inspect-title" class="dossier-title">NEBULA SYNAPSE</h1>
+              <p id="inspect-subtitle" class="dossier-subtitle">Deep-Space Chronal Resonator</p>
+            </div>
+
+            <p id="inspect-desc" class="dossier-desc">
+              Discovered adrift along the Sagittarius arm, this orbital array pulsates with quantum entangled glyphs.
+            </p>
+
+            <div class="dossier-section-title">PROJECT ATTRIBUTES</div>
+            <div id="inspect-attributes" class="inspect-attributes-grid">
+              <!-- Dynamically populated -->
+            </div>
+
+            <div class="inspect-footer-actions">
+              <button class="inspect-action-btn primary" onclick="document.getElementById('inspect-modal').classList.remove('open')">
+                BACK TO CAROUSEL
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main JS entrypoint -->
+    <script>
+      (() => {
+        const modal = document.getElementById('inspect-modal')
+        if (!modal) return
+        let lastOpenState = null
+        const sendState = (force = false) => {
+          const open = modal.classList.contains('open')
+          if (!force && open === lastOpenState) return
+          lastOpenState = open
+          const card = {
+            category: modal.querySelector('#inspect-category')?.textContent?.trim() || '',
+            title: modal.querySelector('#inspect-title')?.textContent?.trim() || '',
+            subtitle: modal.querySelector('#inspect-subtitle')?.textContent?.trim() || '',
+            description: modal.querySelector('#inspect-desc')?.textContent?.trim() || '',
+          }
+          window.parent.postMessage({ type: 'focus-inspect-state', open, card }, window.location.origin)
+        }
+        new MutationObserver(sendState).observe(modal, { attributes: true, attributeFilter: ['class'] })
+        window.addEventListener('message', event => {
+          if (event.origin !== window.location.origin || event.source !== window.parent) return
+          if (event.data?.type === 'focus-inspect-query') { sendState(true); return }
+          if (event.data?.type === 'focus-inspect-parent-rendered') modal.classList.add('parent-rendered')
+          if (event.data?.type === 'focus-inspect-close') modal.classList.remove('open', 'parent-rendered')
+        })
+        sendState()
+      })()
+    </script>
+  </body>
+</html>
